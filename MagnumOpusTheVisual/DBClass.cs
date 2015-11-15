@@ -40,5 +40,27 @@ namespace MagnumOpusTheVisual
             adapt.Fill(dset, table);
             dgv.DataSource = dset.Tables[table].DefaultView;  
         }
+
+        public void insert(string table, string ID, string Name, string Qty, string Price, MySqlConnection conn)
+        {
+            string query = "INSERT INTO " + table + " VALUES (@id, @name, @qty, @price)"; //INSERT QUERY FOR DATABASE
+                                                                            //PARAMETERIZED TO PROTECT FROM INJECTIONS!!
+            MySqlCommand comm = new MySqlCommand(query, conn);  //LOOK TO SEARCH FUNCTION FOR DETAILS
+            comm.Parameters.Add(new MySqlParameter("@id",ID));
+            comm.Parameters.Add(new MySqlParameter("@name", Name));     //APPLY DATA TO PARAMETERS  
+            comm.Parameters.Add(new MySqlParameter("@qty", Qty));
+            comm.Parameters.Add(new MySqlParameter("@price", Price));
+
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)       //CATCH POTENTIAL EXCEPTIONS, EX. SOME IDIOT PUT A STRING IN A DECIMAL
+            {                               //IT AIN'T A VARCHAR
+                MessageBox.Show(ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("ITEM SUCCESSFULLY ADDED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }                                                                           
     }
 }

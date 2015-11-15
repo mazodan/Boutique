@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace MagnumOpusTheVisual
 {
@@ -15,6 +17,9 @@ namespace MagnumOpusTheVisual
         {
             InitializeComponent();
         }
+        DBClass DB = new DBClass();                 //CREATE AN OBJECT FOR THE CLASS DBClass
+        public MySqlConnection Conn { get; set; }   //CONNECTION STRING FROM THE OTHER FORM
+        public DataGridView DGV { get; set; }       //GET THE DATAGRID FROM THE OTHER FORM
 
         public string Command { get; set; }  //THIS IS CALLED A PROPERTY, ALLOWS SAFE MODIFICATION TO PRIVATE CONTROLS
                                 //THANKS TO THE OOP FEATURE CALLED ENCAPSULATION, TO AVOID DETECTION BY REVERSE ENGINEERS
@@ -29,6 +34,14 @@ namespace MagnumOpusTheVisual
             if (txtID.Text == "" || txtName.Text == "" || txtPrice.Text == "" || txtQty.Text == "")
             {
                 MessageBox.Show("Enter all the Fields");
+            }
+            else 
+            {
+
+                Conn.Open();
+                DB.insert("inventory", txtID.Text, txtName.Text, txtQty.Text, txtPrice.Text, Conn); //SETS THE PARAMETERS                
+                Conn.Close();
+                this.Close();
             }
         }
 

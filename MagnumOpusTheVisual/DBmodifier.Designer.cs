@@ -154,6 +154,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DBmodifier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBmodifier";
             this.Load += new System.EventHandler(this.DBmodifier_Load);
             this.ResumeLayout(false);

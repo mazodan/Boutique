@@ -12,9 +12,13 @@ using System.Data.SqlClient;
 namespace MagnumOpusTheVisual
 {
     public partial class Inventory : Form
-    {
+    {       
+
+        
+
+
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
-        MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
+        public MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
 
         public Inventory()
         {
@@ -37,12 +41,9 @@ namespace MagnumOpusTheVisual
                             //ALL THE TIME!!!!! CPU POWER SAVED, THIS PROGRAM IS ECO-FRIENDLY
         }
 
-        private void Reload()
+        public void Reload()
         {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
+                     
             string query = "SELECT * FROM inventory";           //SELECTS ALL ITEMS FROM TABLE
             DB.reload(conn, query, "inventory", dgvInventory);  //RELOADS THE CURRENT DATABASE BY PASSING query TO MYSQLCOMMAND
             conn.Close();
@@ -73,12 +74,17 @@ namespace MagnumOpusTheVisual
         {
             DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM
             D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM"; //DYNAMIC HELP
-            D.ShowDialog();
+            D.Conn = conn;    //PASS THE SQL CONNECTION TO THE OTHER FORM WITHOUT DECLARING ANOTHER CONNECTION FUNCTION            
+            var child = D;
+            child.FormClosed += ChildFormClosed;
+            child.ShowDialog();
         }
 
-        
-        
-        
+        void ChildFormClosed(object sender, FormClosedEventArgs e)
+        {
+            Reload();
+        }
+       
 
         
     }
