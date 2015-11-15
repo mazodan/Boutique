@@ -19,7 +19,7 @@ namespace MagnumOpusTheVisual
         }
         DBClass DB = new DBClass();                 //CREATE AN OBJECT FOR THE CLASS DBClass
         public MySqlConnection Conn { get; set; }   //CONNECTION STRING FROM THE OTHER FORM
-        public DataGridView DGV { get; set; }       //GET THE DATAGRID FROM THE OTHER FORM
+        
 
         public string Command { get; set; }  //THIS IS CALLED A PROPERTY, ALLOWS SAFE MODIFICATION TO PRIVATE CONTROLS
                                 //THANKS TO THE OOP FEATURE CALLED ENCAPSULATION, TO AVOID DETECTION BY REVERSE ENGINEERS
@@ -37,11 +37,13 @@ namespace MagnumOpusTheVisual
             }
             else 
             {
-
                 Conn.Open();
                 DB.insert("inventory", txtID.Text, txtName.Text, txtQty.Text, txtPrice.Text, Conn); //SETS THE PARAMETERS                
                 Conn.Close();
-                this.Close();
+                if (DB.Success == true)     //CHECKS THE STATUS OF THE QUERY EXECUTION, IF TRUE, THE FORM CLOSES AND REFRESH THE DATAGRIDVIEW
+                {
+                    this.Close();
+                }
             }
         }
 

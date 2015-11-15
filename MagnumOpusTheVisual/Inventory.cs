@@ -13,10 +13,6 @@ namespace MagnumOpusTheVisual
 {
     public partial class Inventory : Form
     {       
-
-        
-
-
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
         public MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
 
@@ -43,7 +39,6 @@ namespace MagnumOpusTheVisual
 
         public void Reload()
         {
-                     
             string query = "SELECT * FROM inventory";           //SELECTS ALL ITEMS FROM TABLE
             DB.reload(conn, query, "inventory", dgvInventory);  //RELOADS THE CURRENT DATABASE BY PASSING query TO MYSQLCOMMAND
             conn.Close();
@@ -75,14 +70,16 @@ namespace MagnumOpusTheVisual
             DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM
             D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM"; //DYNAMIC HELP
             D.Conn = conn;    //PASS THE SQL CONNECTION TO THE OTHER FORM WITHOUT DECLARING ANOTHER CONNECTION FUNCTION            
-            var child = D;
-            child.FormClosed += ChildFormClosed;
-            child.ShowDialog();
+
+            //THE NEXT LINES ALLOW TO REFRESH THE FORM AFTER INSERTING/EDITING
+            var child = D;                                  //DECLARES VARIABLE OF CHILD TO THE NEW OBJECT
+            child.FormClosed += ChildFormClosed;            //IF CHILD FORM IS CLOSED
+            child.ShowDialog();                             //THIS EXECUTES
         }
 
         void ChildFormClosed(object sender, FormClosedEventArgs e)
         {
-            Reload();
+            Reload();       //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO REFRESH THE DATABASE
         }
        
 

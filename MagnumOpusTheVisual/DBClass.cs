@@ -10,7 +10,10 @@ using System.Data;
 namespace MagnumOpusTheVisual
 {
     class DBClass
-    {          //INITIALIZE THE DATABASE SQL CREDENTIALS; MAKE IT EDITABLE FOR THESIS TIER PROJECT
+    {
+        public bool Success { get; set; } //CHECKS IF SQL IS EXECUTED FOR REFERENCE
+
+        //INITIALIZE THE DATABASE SQL CREDENTIALS; MAKE IT EDITABLE FOR THESIS TIER PROJECT
         public MySqlConnection sqlConnect(string server, string dbase, string user, string pwrd)
         {
             MySqlConnection conn = new MySqlConnection(
@@ -58,9 +61,12 @@ namespace MagnumOpusTheVisual
             catch (MySqlException ex)       //CATCH POTENTIAL EXCEPTIONS, EX. SOME IDIOT PUT A STRING IN A DECIMAL
             {                               //IT AIN'T A VARCHAR
                 MessageBox.Show(ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return;
+                Success = false;            //SHOWS THAT THE EXECUTION FAILED
+                return;                     //EXCEPTION THROWN, RETURN STATEMENT TERMINATES THE FUNCTION
             }
+                                            //MESSAGEBOX APPEARS IF NO EXCEPTION IS THROWN
             MessageBox.Show("ITEM SUCCESSFULLY ADDED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Success = true;                 //EXECUTION SUCCEEDED
         }                                                                           
     }
 }

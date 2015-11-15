@@ -1,0 +1,11 @@
+C:\Work\MagnumOpus\MagnumOpusTheVisual\bin\Release\MagnumOpusTheVisual.exe
+C:\Work\MagnumOpus\MagnumOpusTheVisual\bin\Release\MagnumOpusTheVisual.pdb
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\ResolveAssemblyReference.cache
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.DBmodifier.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.Inventory.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.MainSelection.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.Properties.Resources.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.QTYupdate.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.csproj.GenerateResource.Cache
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.exe
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.pdb
