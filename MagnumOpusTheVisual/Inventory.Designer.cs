@@ -35,6 +35,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.Size = new System.Drawing.Size(487, 349);
             this.dgvInventory.TabIndex = 0;
+            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
             // 
             // txtSearch
             // 
@@ -106,12 +108,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(13, 140);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(126, 36);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update Item to Inventory";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 374);
             this.ControlBox = false;
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMenu);
@@ -140,6 +153,7 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
 
     }
 }

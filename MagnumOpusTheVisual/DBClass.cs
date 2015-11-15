@@ -67,6 +67,31 @@ namespace MagnumOpusTheVisual
                                             //MESSAGEBOX APPEARS IF NO EXCEPTION IS THROWN
             MessageBox.Show("ITEM SUCCESSFULLY ADDED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Success = true;                 //EXECUTION SUCCEEDED
-        }                                                                           
+        }
+
+        public void update(string table, string ID, string name, string qty, string price, MySqlConnection conn)
+        {
+            string query = "UPDATE " + table + " SET Name=@name, Qty=@qty, Price=@price WHERE itemID=@id;";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+
+            comm.Parameters.Add(new MySqlParameter("@id", ID));
+            comm.Parameters.Add(new MySqlParameter("@name", name));
+            comm.Parameters.Add(new MySqlParameter("@qty", qty));
+            comm.Parameters.Add(new MySqlParameter("@price", price));
+
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Success = false;
+                return;
+            }
+
+            MessageBox.Show("ITEM SUCCESSFULLY UPDATED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Success = true;
+        }                                                  
     }
 }
