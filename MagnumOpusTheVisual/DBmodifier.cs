@@ -24,5 +24,13 @@ namespace MagnumOpusTheVisual
             lblHelp.Text = Command;     //PROPERTY SET TO THE LABEL, DON'T HAVE TO MAKE LABEL PUBLIC, JUST PASS THE VALUE
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text == "" || txtName.Text == "" || txtPrice.Text == "" || txtQty.Text == "")
+            {
+                MessageBox.Show("Enter all the Fields");
+            }
+        }
+
     }
 }

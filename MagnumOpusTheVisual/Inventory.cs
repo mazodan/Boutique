@@ -72,7 +72,7 @@ namespace MagnumOpusTheVisual
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM
-            D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM";
+            D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM"; //DYNAMIC HELP
             D.ShowDialog();
         }
 
