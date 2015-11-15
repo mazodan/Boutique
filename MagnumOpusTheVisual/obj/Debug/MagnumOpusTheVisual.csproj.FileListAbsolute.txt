@@ -1,0 +1,11 @@
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.exe
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.pdb
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.MainSelection.resources
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Properties.Resources.resources
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.csproj.GenerateResource.Cache
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.exe
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.pdb
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Inventory.resources
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.DBmodifier.resources
+C:\Users\danma\Documents\Visual Studio 2008\MagnumOpusTheVisual\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.QTYupdate.resources
