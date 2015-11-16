@@ -37,6 +37,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnEQty = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,12 +130,23 @@
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
+            // btnEQty
+            // 
+            this.btnEQty.Location = new System.Drawing.Point(13, 183);
+            this.btnEQty.Name = "btnEQty";
+            this.btnEQty.Size = new System.Drawing.Size(126, 23);
+            this.btnEQty.TabIndex = 9;
+            this.btnEQty.Text = "Edit Quantity";
+            this.btnEQty.UseVisualStyleBackColor = true;
+            this.btnEQty.Click += new System.EventHandler(this.btnEQty_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 374);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEQty);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -167,6 +179,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Button btnEQty;
 
     }
 }

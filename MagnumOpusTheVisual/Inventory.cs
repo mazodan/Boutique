@@ -69,6 +69,12 @@ namespace MagnumOpusTheVisual
         {
             Application.Exit();
         }
+        
+        private void btnEQty_Click(object sender, EventArgs e)
+        {
+            QTYupdate Q = new QTYupdate(); //NEW UPDATE
+            Q.ShowDialog();
+        }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
@@ -119,6 +125,8 @@ namespace MagnumOpusTheVisual
         {
             currentRow = e.RowIndex;
         }
+
+        
 
         
 
