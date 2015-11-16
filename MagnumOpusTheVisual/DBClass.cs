@@ -138,8 +138,26 @@ namespace MagnumOpusTheVisual
 
             MessageBox.Show("PRICE SUCCESSFULLY UPDATED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Success = true;
-        }    
+        }
 
-                           
+        public void delete(string table, string ID, MySqlConnection conn)
+        {
+            string query = "DELETE FROM " + table + " WHERE itemID = @id;"; //DELETE QUERY
+            MySqlCommand comm = new MySqlCommand(query, conn);
+
+            comm.Parameters.Add(new MySqlParameter("@id", ID));
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                return;
+            }
+
+            MessageBox.Show("ITEM SUCCESSFULLY DELETED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);            
+        }
+       
     }
 }

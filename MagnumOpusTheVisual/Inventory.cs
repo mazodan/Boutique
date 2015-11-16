@@ -100,12 +100,7 @@ namespace MagnumOpusTheVisual
                 //OF THE ITEM THAT THE USER INSERTED TO ENSURE THE DATA HAS BEEN ENTERED PROPERLY
 
                 StateCheck.searchItem = string.Empty;   //RESETS THE STRING
-                StateCheck.logicSwitch = false;     //RESETS THE SWITCH
-                
-                
-            }
-            else
-            {
+                StateCheck.logicSwitch = false;     //RESETS THE SWITCH    
             }
         }
 
@@ -161,6 +156,26 @@ namespace MagnumOpusTheVisual
         private void dgvInventory_SelectionChanged(object sender, EventArgs e)
         {
             currentRow = dgvInventory.CurrentCell.RowIndex;     //AFTER INSERT/UPDATE, GETS NEW SELECTED ROW
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            conn.Open();        //GETS THE ID
+            string ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
+            if (MessageBox.Show("This will delete the Item, Click OK to Proceed", "Delete Item",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                DB.delete("inventory", ID, conn);    //DELETE ITEM
+                conn.Close();                           //CLOSES CONNECTION
+                Reload();                               //RELOADS THE DATAGRIDVIEW
+            }
+            else
+            {
+                conn.Close();
+            }
+                                       
+            
+
         }
 
         

@@ -39,6 +39,7 @@
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnEQty = new System.Windows.Forms.Button();
             this.btnPrice = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,12 +154,23 @@
             this.btnPrice.UseVisualStyleBackColor = true;
             this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(13, 243);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(126, 23);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "Delete Selected Item";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 374);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnPrice);
             this.Controls.Add(this.btnEQty);
             this.Controls.Add(this.btnShowAll);
@@ -195,6 +207,7 @@
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Button btnEQty;
         private System.Windows.Forms.Button btnPrice;
+        private System.Windows.Forms.Button btnDelete;
 
     }
 }
