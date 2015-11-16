@@ -48,15 +48,23 @@ namespace MagnumOpusTheVisual
             if (btnUpdate.Text == "Update Quantity")
             {
                 Conn.Open();
-                DB.update("inventory", ItemID, txtQTY.Text, Conn);
+                DB.update("inventory", ItemID, txtQTY.Text, Conn);  //THESE 2 FUNCTIONS HAVE
+                Conn.Close();                                       //DIFFERENT PARAMETERS
+            }
+            else if (btnUpdate.Text == "Update Price")              //THESE ARE OVERLOADED FUNCTIONS
+            {
+                Conn.Open();
+                DB.update("inventory", ItemID, Conn, txtQTY.Text);
                 Conn.Close();
             }
+
             if (DB.Success == true)
             {
                 StateCheck.logicSwitch = true;
                 StateCheck.searchItem = NameOfItem;
                 this.Close();
             }
+
         } 
     }
 }

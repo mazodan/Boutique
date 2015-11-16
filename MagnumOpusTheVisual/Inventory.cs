@@ -81,8 +81,7 @@ namespace MagnumOpusTheVisual
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            
+        {            
             D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM"; //DYNAMIC HELP
             D.Conn = conn;    //PASS THE SQL CONNECTION TO THE OTHER FORM WITHOUT DECLARING ANOTHER CONNECTION FUNCTION            
             D.Caption = "Add Item";     //PASS THE APPROPRIATE CAPTION
@@ -96,13 +95,18 @@ namespace MagnumOpusTheVisual
         {
             if (StateCheck.logicSwitch == true) //IF USER HAS ADDED DATA
             {
-                DB.search("inventory", StateCheck.searchItem, conn, dgvInventory); 
+                DB.search("inventory", StateCheck.searchItem, conn, dgvInventory);
                 //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO SEARCH THE DATABASE
                 //OF THE ITEM THAT THE USER INSERTED TO ENSURE THE DATA HAS BEEN ENTERED PROPERLY
 
                 StateCheck.searchItem = string.Empty;   //RESETS THE STRING
                 StateCheck.logicSwitch = false;     //RESETS THE SWITCH
-            }      
+                
+                
+            }
+            else
+            {
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

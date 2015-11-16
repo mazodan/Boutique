@@ -115,6 +115,29 @@ namespace MagnumOpusTheVisual
 
             MessageBox.Show("QUANTITY SUCCESSFULLY UPDATED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Success = true;
+        }
+
+        public void update(string table, string ID, MySqlConnection conn , string price)   //UPDATE SPECIFIC FOR EDITING QUANTITY
+        {
+            string query = "UPDATE " + table + " SET Price = @price WHERE itemID = @id;";
+            MySqlCommand comm = new MySqlCommand(query, conn);
+
+            comm.Parameters.Add(new MySqlParameter("@id", ID));
+            comm.Parameters.Add(new MySqlParameter("@price", price));
+
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Success = false;
+                return;
+            }
+
+            MessageBox.Show("PRICE SUCCESSFULLY UPDATED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Success = true;
         }    
 
                            

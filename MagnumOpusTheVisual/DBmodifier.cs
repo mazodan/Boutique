@@ -44,8 +44,16 @@ namespace MagnumOpusTheVisual
                 txtName.Text = itemname;        //IF UPDATING, DISABLES ID AND SETS SELECTED FROM DGV TO THE TEXTBOXES
                 txtQty.Text = QTY;
                 txtPrice.Text = Price;
-
                 txtID.Enabled = false;
+            }
+            else
+            {      //GODDAMNED COLLECTOR WONT WORK, HAD TO USE CONDITIONS, ASK ME WHY I DID THIS
+                   //CAN SOLVE IT BY MAKING A NEW OBJECT, AIN'T GOT TIME FOR THAT
+                txtID.Text = string.Empty;
+                txtName.Text = string.Empty; //SETS ALL TEXTBOXES TO EMPTY AND ENABLES TXTID
+                txtQty.Text = string.Empty;
+                txtPrice.Text = string.Empty;
+                txtID.Enabled = true;
             }
         }
 
