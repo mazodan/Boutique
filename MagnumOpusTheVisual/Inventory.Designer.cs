@@ -46,6 +46,7 @@
             this.dgvInventory.AllowUserToAddRows = false;
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToOrderColumns = true;
+            this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(201, 13);
             this.dgvInventory.Name = "dgvInventory";

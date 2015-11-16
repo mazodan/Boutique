@@ -72,7 +72,8 @@ namespace MagnumOpusTheVisual
         
         private void btnEQty_Click(object sender, EventArgs e)
         {
-            QTYupdate Q = new QTYupdate(); //NEW UPDATE
+            QTYupdate Q = new QTYupdate(); //NEW OBJECT FOR THE QTYEDIT FORM
+            Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
             Q.ShowDialog();
         }
 

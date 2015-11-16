@@ -15,5 +15,12 @@ namespace MagnumOpusTheVisual
         {
             InitializeComponent();
         }
+
+        public string QTY { get; set; } //GET QUANTTY
+
+        private void QTYupdate_Load(object sender, EventArgs e)
+        {
+            txtQTY.Text = QTY;
+        } 
     }
 }

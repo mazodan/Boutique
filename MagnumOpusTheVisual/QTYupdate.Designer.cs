@@ -74,6 +74,7 @@
             this.Name = "QTYupdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QTYupdate";
+            this.Load += new System.EventHandler(this.QTYupdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
