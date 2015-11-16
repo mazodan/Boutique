@@ -65,6 +65,7 @@ namespace MagnumOpusTheVisual
                 }
                 if (DB.Success == true)     //CHECKS THE STATUS OF THE QUERY EXECUTION, IF TRUE, THE FORM CLOSES AND REFRESH THE DATAGRIDVIEW
                 {
+                    StateCheck.logicSwitch = true;      //THIS RETURNS THAT THE USER HAS DONE SOMETHING
                     this.Close();
                 }
             }

@@ -13,10 +13,13 @@ namespace MagnumOpusTheVisual
 {
     public partial class Inventory : Form
     {       
+        //C# > VB.NET
+
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
         public MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
-        int currentRow;
+        int currentRow;                 //STORES THE CURRENT ROW
         
+        public string searchItem { get; set; } //AFTER USER UPDATES/INSERTS GETS THE SEARCH ITEM FROM DBMODIFIER, TO SEARCH IT.
 
         public Inventory()
         {
@@ -83,7 +86,9 @@ namespace MagnumOpusTheVisual
 
         void ChildFormClosed(object sender, FormClosedEventArgs e)
         {
-            Reload();       //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO REFRESH THE DATABASE
+            if (StateCheck.logicSwitch == true)     //IF USER HAS ADDED A FORM
+                Reload();
+                   //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO REFRESH THE DATABASE
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -92,7 +97,7 @@ namespace MagnumOpusTheVisual
             D.Command = "TO UPDATE, EDIT THE VALUES\nCLICK UPDATE BUTTON, \nNO EMPTY FIELDS!!!";
             D.Caption = "Update";    //SETS THE CAPTION TO UPDATE   
 
-            D.ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
+            D.ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();         //PASS SELECTED FORMS TO UPDATE FORM
             D.itemname = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
             D.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
             D.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
