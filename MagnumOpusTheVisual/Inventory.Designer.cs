@@ -54,6 +54,7 @@
             this.dgvInventory.Size = new System.Drawing.Size(487, 349);
             this.dgvInventory.TabIndex = 0;
             this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
+            this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
             // txtSearch
             // 

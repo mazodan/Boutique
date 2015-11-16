@@ -68,15 +68,8 @@ namespace MagnumOpusTheVisual
         private void btnExit_Click(object sender, EventArgs e)  //THIS EXITS THE APP
         {
             Application.Exit();
-        }
+        }       
         
-        private void btnEQty_Click(object sender, EventArgs e)
-        {
-            QTYupdate Q = new QTYupdate(); //NEW OBJECT FOR THE QTYEDIT FORM
-            Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
-            Q.ShowDialog();
-        }
-
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             Reload();
@@ -122,10 +115,31 @@ namespace MagnumOpusTheVisual
             child.ShowDialog();
         }
 
+        private void btnEQty_Click(object sender, EventArgs e)
+        {
+            QTYupdate Q = new QTYupdate(); //NEW OBJECT FOR THE QTYEDIT FORM
+            Q.Conn = conn;
+            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
+            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
+            Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
+            var child = Q;
+            child.FormClosed += ChildFormClosed;
+            child.ShowDialog();
+        }
+
+
+
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            currentRow = e.RowIndex;
+            currentRow = e.RowIndex;    //SETS ROW INDEX WHEN CELL IS CHANGED
         }
+
+        private void dgvInventory_SelectionChanged(object sender, EventArgs e)
+        {
+            currentRow = dgvInventory.CurrentCell.RowIndex;     //AFTER INSERT/UPDATE, GETS NEW SELECTED ROW
+        }
+
+
 
         
 
