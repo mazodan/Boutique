@@ -11,9 +11,13 @@ using System.Data.SqlClient;
 
 namespace MagnumOpusTheVisual
 {
-    public partial class QTYupdate : Form
+    public partial class UpdateQtyPrice : Form
     {
-        public QTYupdate()
+        /*
+         * ALLOWS UPDATE TO THE QUANTITY AND PRICE TO THE PROGRAM
+         */
+
+        public UpdateQtyPrice()
         {
             InitializeComponent();
         }

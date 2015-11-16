@@ -13,6 +13,11 @@ namespace MagnumOpusTheVisual
 {
     public partial class DBmodifier : Form
     {
+        /*
+         * THIS FORM ALLOWS INSERT/UPDATE OF FILES
+         */
+
+
         public DBmodifier()
         {
             InitializeComponent();

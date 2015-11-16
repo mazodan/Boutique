@@ -84,8 +84,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="QTYupdate.resx">
-      <DependentUpon>QTYupdate.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateQtyPrice.resx">
+      <DependentUpon>UpdateQtyPrice.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,11 +100,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="QTYupdate.cs">
+    <Compile Include="UpdateQtyPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QTYupdate.Designer.cs">
-      <DependentUpon>QTYupdate.cs</DependentUpon>
+    <Compile Include="UpdateQtyPrice.Designer.cs">
+      <DependentUpon>UpdateQtyPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="StateCheck.cs" />
   </ItemGroup>

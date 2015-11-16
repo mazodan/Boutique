@@ -1,6 +1,6 @@
 ﻿namespace MagnumOpusTheVisual
 {
-    partial class QTYupdate
+    partial class UpdateQtyPrice
     {
         /// <summary>
         /// Required designer variable.

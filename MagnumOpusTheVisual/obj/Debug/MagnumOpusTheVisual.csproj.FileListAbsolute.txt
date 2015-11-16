@@ -18,5 +18,5 @@ C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.DBmodifier.
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Inventory.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.MainSelection.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Properties.Resources.resources
-C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.QTYupdate.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.csproj.GenerateResource.Cache
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.UpdateQtyPrice.resources

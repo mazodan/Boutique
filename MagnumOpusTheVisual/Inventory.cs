@@ -12,7 +12,12 @@ using System.Data.SqlClient;
 namespace MagnumOpusTheVisual
 {
     public partial class Inventory : Form
-    {       
+    {
+        /*
+         * THIS FORM ALLOWS MANIPULATION OF THE INVENTORY, ANY CHANGES HERE WILL PASS
+         * TO THE CASHIER
+         */
+
         //C# > VB.NET
         DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM DBMODIFIER
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
@@ -117,7 +122,7 @@ namespace MagnumOpusTheVisual
 
         private void btnEQty_Click(object sender, EventArgs e)
         {
-            QTYupdate Q = new QTYupdate(); //NEW OBJECT FOR THE QTYEDIT FORM
+            UpdateQtyPrice Q = new UpdateQtyPrice(); //NEW OBJECT FOR THE QTYEDIT FORM
             Q.Conn = conn;
             Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
             Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
