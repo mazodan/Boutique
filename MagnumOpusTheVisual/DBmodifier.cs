@@ -33,10 +33,10 @@ namespace MagnumOpusTheVisual
             btnExecute.Text = Caption;
             lblHelp.Text = Command;     //PROPERTY SET TO THE LABEL, DON'T HAVE TO MAKE LABEL PUBLIC, JUST PASS THE VALUE
 
-            if (btnExecute.Text == "Update")
+            if (btnExecute.Text == "Update")    //WHILE FORM LOADS, CHECKS IF ADDING OR UPDATING
             {
                 txtID.Text = ID;
-                txtName.Text = itemname;
+                txtName.Text = itemname;        //IF UPDATING, DISABLES ID AND SETS SELECTED FROM DGV TO THE TEXTBOXES
                 txtQty.Text = QTY;
                 txtPrice.Text = Price;
 
@@ -61,15 +61,21 @@ namespace MagnumOpusTheVisual
                 else if (btnExecute.Text == "Update")
                 {
                     Conn.Open();
-                    
+                    DB.update("inventory", txtID.Text, txtName.Text, txtQty.Text, txtPrice.Text, Conn);
+                    Conn.Close();
                 }
+
+
                 if (DB.Success == true)     //CHECKS THE STATUS OF THE QUERY EXECUTION, IF TRUE, THE FORM CLOSES AND REFRESH THE DATAGRIDVIEW
                 {
                     StateCheck.logicSwitch = true;      //THIS RETURNS THAT THE USER HAS DONE SOMETHING
+                    StateCheck.searchItem = txtName.Text;
                     this.Close();
                 }
             }
         }
+
+
 
     }
 }

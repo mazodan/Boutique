@@ -16,5 +16,8 @@ namespace MagnumOpusTheVisual
 
         public static bool logicSwitch { get; set; } //THIS STORES THE BOOLEAN WHETHER THE USER UPDATED OR JUST CLOSED THE FORM
         //DEFAULT VALUES IS FALSE, 
+
+        public static string searchItem { get; set; } 
+        //AFTER USER UPDATES/INSERTS GETS THE SEARCH ITEM FROM DBMODIFIER, TO SEARCH IT.
     }
 }

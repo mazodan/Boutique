@@ -14,12 +14,12 @@ namespace MagnumOpusTheVisual
     public partial class Inventory : Form
     {       
         //C# > VB.NET
-
+        DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM DBMODIFIER
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
         public MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
         int currentRow;                 //STORES THE CURRENT ROW
         
-        public string searchItem { get; set; } //AFTER USER UPDATES/INSERTS GETS THE SEARCH ITEM FROM DBMODIFIER, TO SEARCH IT.
+        
 
         public Inventory()
         {
@@ -70,11 +70,14 @@ namespace MagnumOpusTheVisual
             Application.Exit();
         }
 
-        
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            Reload();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DBmodifier D = new DBmodifier();    //GETS OBJECT OF THAT FORM
+            
             D.Command = "TO ADD ITEMS TO DATABASE\nPLEASE FILL ALL THE FIELDS\nAND CLICK ADD ITEM"; //DYNAMIC HELP
             D.Conn = conn;    //PASS THE SQL CONNECTION TO THE OTHER FORM WITHOUT DECLARING ANOTHER CONNECTION FUNCTION            
             D.Caption = "Add Item";     //PASS THE APPROPRIATE CAPTION
@@ -86,28 +89,38 @@ namespace MagnumOpusTheVisual
 
         void ChildFormClosed(object sender, FormClosedEventArgs e)
         {
-            if (StateCheck.logicSwitch == true)     //IF USER HAS ADDED A FORM
-                Reload();
-                   //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO REFRESH THE DATABASE
+            if (StateCheck.logicSwitch == true) //IF USER HAS ADDED DATA
+            {
+                DB.search("inventory", StateCheck.searchItem, conn, dgvInventory); 
+                //AFTER INSERT OR UPDATE, THAT FORM CLOSES, IT SENDS A COMMAND TO SEARCH THE DATABASE
+                //OF THE ITEM THAT THE USER INSERTED TO ENSURE THE DATA HAS BEEN ENTERED PROPERLY
+
+                StateCheck.searchItem = string.Empty;   //RESETS THE STRING
+                StateCheck.logicSwitch = false;     //RESETS THE SWITCH
+            }      
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DBmodifier D = new DBmodifier();        //DECLARE NEW OBJECT OF THAT FORM
+
             D.Command = "TO UPDATE, EDIT THE VALUES\nCLICK UPDATE BUTTON, \nNO EMPTY FIELDS!!!";
             D.Caption = "Update";    //SETS THE CAPTION TO UPDATE   
-
+            D.Conn = conn;
             D.ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();         //PASS SELECTED FORMS TO UPDATE FORM
             D.itemname = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
             D.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
             D.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
-            D.ShowDialog();
+            var child = D;
+            child.FormClosed += ChildFormClosed;
+            child.ShowDialog();
         }
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentRow = e.RowIndex;
         }
+
+        
 
         
        
