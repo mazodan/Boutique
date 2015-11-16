@@ -38,6 +38,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnEQty = new System.Windows.Forms.Button();
+            this.btnPrice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,12 +143,23 @@
             this.btnEQty.UseVisualStyleBackColor = true;
             this.btnEQty.Click += new System.EventHandler(this.btnEQty_Click);
             // 
+            // btnPrice
+            // 
+            this.btnPrice.Location = new System.Drawing.Point(13, 213);
+            this.btnPrice.Name = "btnPrice";
+            this.btnPrice.Size = new System.Drawing.Size(126, 23);
+            this.btnPrice.TabIndex = 10;
+            this.btnPrice.Text = "Edit Price";
+            this.btnPrice.UseVisualStyleBackColor = true;
+            this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 374);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPrice);
             this.Controls.Add(this.btnEQty);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnUpdate);
@@ -182,6 +194,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Button btnEQty;
+        private System.Windows.Forms.Button btnPrice;
 
     }
 }

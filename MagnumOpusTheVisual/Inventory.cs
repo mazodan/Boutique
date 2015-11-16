@@ -23,8 +23,8 @@ namespace MagnumOpusTheVisual
         DBClass DB = new DBClass();     //DECLARES A NEW OBJECT
         public MySqlConnection conn;           //DECLARES A NEW MYSQL CONNECTION
         int currentRow;                 //STORES THE CURRENT ROW
-        
-        
+
+        UpdateQtyPrice Q = new UpdateQtyPrice(); //NEW OBJECT FOR THE QTYEDIT FORM
 
         public Inventory()
         {
@@ -92,7 +92,7 @@ namespace MagnumOpusTheVisual
             child.ShowDialog();                             
         }
 
-        void ChildFormClosed(object sender, FormClosedEventArgs e)
+        void ChildFormClosed(object sender, FormClosedEventArgs e)      //EXECUTES IF CHILD FORM CLOSES
         {
             if (StateCheck.logicSwitch == true) //IF USER HAS ADDED DATA
             {
@@ -122,17 +122,32 @@ namespace MagnumOpusTheVisual
 
         private void btnEQty_Click(object sender, EventArgs e)
         {
-            UpdateQtyPrice Q = new UpdateQtyPrice(); //NEW OBJECT FOR THE QTYEDIT FORM
+            
+            Q.Text = "Update Quantity";             //CHANGE THE FORM TITLE
+            Q.Instruction = "Update the Quantity";  //SEND INSTRUCTIONS
+            Q.ButtonCaption = "Update Quantity";    //SEND THE CAPTION FOR COMPARISON
             Q.Conn = conn;
-            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
-            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
+            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
+            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
             Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
             var child = Q;
             child.FormClosed += ChildFormClosed;
             child.ShowDialog();
         }
 
-
+        private void btnPrice_Click(object sender, EventArgs e)
+        {
+            Q.Text = "Update Price";      //SAME AS THE UPDATE QUANTITY BUTTON EVENT, LOOK UP
+            Q.Instruction = "Update the Price";
+            Q.ButtonCaption = "Update Price";
+            Q.Conn = conn;
+            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
+            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
+            Q.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
+            var child = Q;
+            child.FormClosed += ChildFormClosed;
+            child.ShowDialog();
+        }
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -143,6 +158,10 @@ namespace MagnumOpusTheVisual
         {
             currentRow = dgvInventory.CurrentCell.RowIndex;     //AFTER INSERT/UPDATE, GETS NEW SELECTED ROW
         }
+
+        
+
+        
 
 
 

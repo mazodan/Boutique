@@ -25,20 +25,32 @@ namespace MagnumOpusTheVisual
         DBClass DB = new DBClass();                 //CREATE AN OBJECT FOR THE CLASS DBClass
         public MySqlConnection Conn { get; set; }   //CONNECTION STRING FROM THE OTHER FORM
 
+        public string Instruction { get; set; }     //RECEIVE INSTRUCTION
+        public string ButtonCaption { get; set; }   //GET BUTTON CAPTION
+
         public string QTY { get; set; } //GET QUANTTY
         public string ItemID { get; set; } //GET ITEM ID
         public string NameOfItem { get; set; } //GET ITEM NAME
+        public string Price { get; set; }   //GET PRICE
 
         private void QTYupdate_Load(object sender, EventArgs e)
         {
-            txtQTY.Text = QTY;
+            btnUpdate.Text = ButtonCaption;
+            label1.Text = Instruction;
+                                        //THIS IS FROM C, LEGACY WAY OF IF STATEMENTS
+
+                                //CONDITION                     //TRUE  //FALSE
+            txtQTY.Text = (btnUpdate.Text == "Update Quantity") ? QTY : Price;  //IF STATEMENT TERNARY OPERATOR
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Conn.Open();
-            DB.update("inventory", ItemID, txtQTY.Text, Conn);
-            Conn.Close();
+            if (btnUpdate.Text == "Update Quantity")
+            {
+                Conn.Open();
+                DB.update("inventory", ItemID, txtQTY.Text, Conn);
+                Conn.Close();
+            }
             if (DB.Success == true)
             {
                 StateCheck.logicSwitch = true;
