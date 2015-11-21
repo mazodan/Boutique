@@ -47,7 +47,6 @@
             // 
             this.dgvInventory.AllowUserToAddRows = false;
             this.dgvInventory.AllowUserToDeleteRows = false;
-            this.dgvInventory.AllowUserToOrderColumns = true;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(201, 13);
@@ -55,7 +54,6 @@
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.Size = new System.Drawing.Size(487, 349);
             this.dgvInventory.TabIndex = 0;
-            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
             this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
             // txtSearch

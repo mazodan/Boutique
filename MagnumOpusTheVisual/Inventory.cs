@@ -45,6 +45,9 @@ namespace MagnumOpusTheVisual
             Reload();
             conn.Close();   //CLOSE THE CONNECTION TO AVOID OVERCROWDING, THINK OF THE ENERGY SAVED BY NOT CONNECTING
                             //ALL THE TIME!!!!! CPU POWER SAVED, THIS PROGRAM IS ECO-FRIENDLY
+
+            //MAKES ROWS NOT SORTABLE, PREVENTS EXECPTIONS, 
+            dgvInventory.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void Reload()
@@ -52,6 +55,7 @@ namespace MagnumOpusTheVisual
             string query = "SELECT * FROM inventory";           //SELECTS ALL ITEMS FROM TABLE
             DB.reload(conn, query, "inventory", dgvInventory);  //RELOADS THE CURRENT DATABASE BY PASSING query TO MYSQLCOMMAND
             conn.Close();
+            dgvInventory.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -148,15 +152,7 @@ namespace MagnumOpusTheVisual
             child.ShowDialog();
         }
 
-        private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            currentRow = e.RowIndex;    //SETS ROW INDEX WHEN CELL IS CHANGED
-        }
-
-        private void dgvInventory_SelectionChanged(object sender, EventArgs e)
-        {
-            currentRow = dgvInventory.CurrentCell.RowIndex;     //AFTER INSERT/UPDATE, GETS NEW SELECTED ROW
-        }
+        
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -174,5 +170,11 @@ namespace MagnumOpusTheVisual
                 conn.Close();
             }
         }
+
+        private void dgvInventory_SelectionChanged(object sender, EventArgs e)
+        {
+            currentRow = dgvInventory.CurrentCell.RowIndex;    //SETS ROW INDEX WHEN CELL IS CHANGED
+        }
+
     }
 }
