@@ -18,9 +18,9 @@ namespace MagnumOpusTheVisual
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Inventory I = new Inventory();      //SHOW INVENTORY FORM, ACCESS INVENTORY
-            I.Show();                           //BY CREATING A NEW OBJECT THAT REPRESENTS THE FORM
-            this.Hide();
+            Login L = new Login();  //Login Object Initialize
+            L.ShowDialog();         //Show Login form
+            L.selection = "Inventory";  //LET LOGIN.CS KNOW THAT USER CLICKED INVENTORY
         }
 
         private void MainSelection_FormClosing(object sender, FormClosingEventArgs e)

@@ -20,3 +20,4 @@ C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.MainSelecti
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Properties.Resources.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.csproj.GenerateResource.Cache
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.UpdateQtyPrice.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Login.resources
