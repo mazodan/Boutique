@@ -15,7 +15,7 @@ namespace MagnumOpusTheVisual
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainSelection());
+            Application.Run(new startup());
         }
     }
 }

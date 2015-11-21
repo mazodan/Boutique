@@ -19,8 +19,13 @@ namespace MagnumOpusTheVisual
         private void button1_Click(object sender, EventArgs e)
         {
             Login L = new Login();  //Login Object Initialize
-            L.ShowDialog();         //Show Login form
             L.selection = "Inventory";  //LET LOGIN.CS KNOW THAT USER CLICKED INVENTORY
+            L.ShowDialog();         //Show Login form
+            if (StateCheck.logicSwitch == true)
+            {
+                StateCheck.logicSwitch = false;
+                this.Hide();                
+            }
         }
 
         private void MainSelection_FormClosing(object sender, FormClosingEventArgs e)
