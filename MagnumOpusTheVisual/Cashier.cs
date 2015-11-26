@@ -22,7 +22,6 @@ namespace MagnumOpusTheVisual
         public Cashier()
         {
             InitializeComponent();
-            txtReceipt.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void Cashier_Load(object sender, EventArgs e)
@@ -78,7 +77,12 @@ namespace MagnumOpusTheVisual
             catch (Exception)
             {
                 MessageBox.Show("Select the Item and Enter an Integer for the Quantity, Please","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
+            string txt = txtReceipt.Text + "\n";
+            txtReceipt.Text = txt + "\n" + DB.InsertItem(dgvSearch.Rows[currentRow].Cells[1].Value.ToString(), dgvSearch.Rows[currentRow].Cells[2].Value.ToString());
+
+            
             
         }
 

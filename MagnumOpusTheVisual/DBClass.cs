@@ -177,6 +177,11 @@ namespace MagnumOpusTheVisual
         {
             return "Boutique Official Receipt(MOCK RECEIPT)\nSignature with Printed Name:\nDate Issued:"; 
         }
+
+        public string InsertItem(string ItemName, string ItemPrice)
+        {
+            return ItemName + "\t\t" + ItemPrice;
+        }
        
     }
 }
