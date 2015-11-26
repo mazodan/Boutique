@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblAmt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -45,15 +45,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Amount:";
             // 
-            // label2
+            // lblAmt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "9999999999";
+            this.lblAmt.AutoSize = true;
+            this.lblAmt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmt.Location = new System.Drawing.Point(164, 13);
+            this.lblAmt.Name = "lblAmt";
+            this.lblAmt.Size = new System.Drawing.Size(132, 25);
+            this.lblAmt.TabIndex = 1;
+            this.lblAmt.Text = "9999999999";
             // 
             // label3
             // 
@@ -93,11 +93,12 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblAmt);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Cashout";
             this.Text = "Checkout";
+            this.Load += new System.EventHandler(this.Cashout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +107,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAmt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnConfirm;

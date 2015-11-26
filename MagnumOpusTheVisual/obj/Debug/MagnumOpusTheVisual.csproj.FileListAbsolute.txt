@@ -24,3 +24,4 @@ C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Login.resou
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.startup.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Cashier.resources
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.CashHelp.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.Cashout.resources

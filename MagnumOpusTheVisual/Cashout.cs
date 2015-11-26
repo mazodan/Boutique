@@ -17,5 +17,12 @@ namespace MagnumOpusTheVisual
         {
             InitializeComponent();
         }
+
+        private void Cashout_Load(object sender, EventArgs e)
+        {
+            lblAmt.Text = Amount.ToString();
+        }
+
+
     }
 }

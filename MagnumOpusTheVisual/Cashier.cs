@@ -96,8 +96,9 @@ namespace MagnumOpusTheVisual
         {
             btnAdd.Enabled = false;
             btnPrint.Enabled = true;
-
-
+            Cashout C = new Cashout();
+            C.Amount = total;
+            C.ShowDialog();
         }
 
 
