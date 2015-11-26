@@ -40,6 +40,7 @@ namespace MagnumOpusTheVisual
             }
 
             conn.Close();
+            txtReceipt.Text = DB.ReceiptIntro();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -69,6 +70,15 @@ namespace MagnumOpusTheVisual
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            try
+            {
+                total += decimal.Parse(dgvSearch.Rows[currentRow].Cells[2].Value.ToString()) * decimal.Parse(txtQ.Text);
+                lblTotal.Text = total.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select the Item and Enter an Integer for the Quantity, Please","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             
         }
 

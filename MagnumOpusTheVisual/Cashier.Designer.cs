@@ -48,7 +48,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQ = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
@@ -230,12 +230,12 @@
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // textBox1
+            // txtQ
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 307);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 20);
-            this.textBox1.TabIndex = 17;
+            this.txtQ.Location = new System.Drawing.Point(95, 307);
+            this.txtQ.Name = "txtQ";
+            this.txtQ.Size = new System.Drawing.Size(56, 20);
+            this.txtQ.TabIndex = 17;
             // 
             // label2
             // 
@@ -253,7 +253,7 @@
             this.ClientSize = new System.Drawing.Size(773, 377);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQ);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMenu);
@@ -299,7 +299,7 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQ;
         private System.Windows.Forms.Label label2;
     }
 }

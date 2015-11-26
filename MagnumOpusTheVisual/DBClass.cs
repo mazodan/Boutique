@@ -172,6 +172,11 @@ namespace MagnumOpusTheVisual
 
             MessageBox.Show("ITEM SUCCESSFULLY DELETED", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);            
         }
+
+        public string ReceiptIntro()
+        {
+            return "Boutique Official Receipt(MOCK RECEIPT)\nSignature with Printed Name:\nDate Issued:"; 
+        }
        
     }
 }
