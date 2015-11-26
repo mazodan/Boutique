@@ -15,6 +15,7 @@ namespace MagnumOpusTheVisual
     {
         decimal total = 0;
         decimal change = 0;
+        int currentRow;
         MySqlConnection conn = new MySqlConnection();
         DBClass DB = new DBClass();
 
@@ -66,6 +67,18 @@ namespace MagnumOpusTheVisual
             conn.Close();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvSearch_SelectionChanged(object sender, EventArgs e)
+        {
+            currentRow = dgvSearch.CurrentCell.RowIndex;    //SETS ROW INDEX WHEN CELL IS CHANGED
+        }
+
+
+        
         
         
         
