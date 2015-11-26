@@ -80,7 +80,8 @@ namespace MagnumOpusTheVisual
                 return;
             }
             string txt = txtReceipt.Text + "\n";
-            txtReceipt.Text = txt + "\n" + DB.InsertItem(dgvSearch.Rows[currentRow].Cells[1].Value.ToString(), dgvSearch.Rows[currentRow].Cells[2].Value.ToString());
+            decimal presyo = decimal.Parse(dgvSearch.Rows[currentRow].Cells[2].Value.ToString()) * decimal.Parse(txtQ.Text);
+            txtReceipt.Text = txt + "\n" + DB.InsertItem(dgvSearch.Rows[currentRow].Cells[1].Value.ToString(), presyo.ToString(), txtQ.Text);
 
             
             
