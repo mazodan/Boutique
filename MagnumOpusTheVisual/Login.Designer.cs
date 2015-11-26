@@ -88,6 +88,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 5;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // btnAdd
             // 

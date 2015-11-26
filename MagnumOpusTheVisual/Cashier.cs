@@ -6,18 +6,39 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace MagnumOpusTheVisual
 {
     public partial class Cashier : Form
     {
-        int total = 0;
-        int change = 0;
+        decimal total = 0;
+        decimal change = 0;
+        MySqlConnection conn = new MySqlConnection();
+        DBClass DB = new DBClass();
 
         public Cashier()
         {
             InitializeComponent();
             txtReceipt.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void Cashier_Load(object sender, EventArgs e)
+        {
+            lblTotal.Text = total.ToString();
+            lblChange.Text = change.ToString();
+            conn = DB.sqlConnect("localhost", "iteminventory", "root", "root"); //EDIT CREDENTIALS HERE
+            try
+            {
+                conn.Open();            //CONNECTS TO THE MYSQL DATABASE 
+            }
+            catch (MySqlException ex)   //CATCH EXCEPTIONS!
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            conn.Close();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,6 +58,15 @@ namespace MagnumOpusTheVisual
             CashHelp C = new CashHelp();
             C.ShowDialog();
         }
+
+        private void btnItemSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            DB.search("inventory", txtItem.Text, dgvSearch, conn);
+            conn.Close();
+        }
+
+        
         
         
         

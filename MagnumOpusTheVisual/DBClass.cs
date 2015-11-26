@@ -44,6 +44,20 @@ namespace MagnumOpusTheVisual
             dgv.DataSource = dset.Tables[table].DefaultView;  
         }
 
+        public void search(string table, string parameter, DataGridView dgv, MySqlConnection conn)  //OVERLOADED FOR CASHIER
+        {
+            string query = "SELECT itemID, Name, Price FROM " + table + " WHERE Name LIKE @param;";  
+            string searchTerm = string.Format("%{0}%", parameter); 
+            
+            MySqlCommand comm = new MySqlCommand(query, conn);
+            comm.Parameters.Add(new MySqlParameter("@param", searchTerm));  
+
+            MySqlDataAdapter adapt = new MySqlDataAdapter(comm);   
+            DataSet dset = new DataSet();                           
+            adapt.Fill(dset, table);
+            dgv.DataSource = dset.Tables[table].DefaultView;
+        }
+
         public void insert(string table, string ID, string Name, string Qty, string Price, MySqlConnection conn)
         {
             string query = "INSERT INTO " + table + " VALUES (@id, @name, @qty, @price)"; //INSERT QUERY FOR DATABASE
