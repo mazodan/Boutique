@@ -92,6 +92,14 @@ namespace MagnumOpusTheVisual
             currentRow = dgvSearch.CurrentCell.RowIndex;    //SETS ROW INDEX WHEN CELL IS CHANGED
         }
 
+        private void btnComp_Click(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = false;
+            btnPrint.Enabled = true;
+
+
+        }
+
 
         
         
