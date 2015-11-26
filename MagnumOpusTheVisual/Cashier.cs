@@ -31,6 +31,12 @@ namespace MagnumOpusTheVisual
             M.Show();
             this.Close();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            CashHelp C = new CashHelp();
+            C.ShowDialog();
+        }
         
         
         

@@ -45,6 +45,7 @@
             this.txtReceipt = new System.Windows.Forms.RichTextBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,7 +172,7 @@
             this.txtReceipt.Name = "txtReceipt";
             this.txtReceipt.ReadOnly = true;
             this.txtReceipt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtReceipt.Size = new System.Drawing.Size(406, 252);
+            this.txtReceipt.Size = new System.Drawing.Size(419, 252);
             this.txtReceipt.TabIndex = 13;
             this.txtReceipt.Text = "";
             // 
@@ -195,12 +196,23 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(614, 301);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(25, 23);
+            this.btnHelp.TabIndex = 16;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 333);
+            this.ClientSize = new System.Drawing.Size(646, 333);
             this.ControlBox = false;
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.txtReceipt);
@@ -243,5 +255,6 @@
         private System.Windows.Forms.RichTextBox txtReceipt;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

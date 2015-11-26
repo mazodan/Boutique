@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashHelp.Designer.cs">
+      <DependentUpon>CashHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CashHelp.resx">
+      <DependentUpon>CashHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
