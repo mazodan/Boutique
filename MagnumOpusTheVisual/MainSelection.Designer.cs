@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInv = new System.Windows.Forms.Button();
+            this.btnCash = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnInv
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(316, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "INVENTORY";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnInv.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInv.Location = new System.Drawing.Point(12, 98);
+            this.btnInv.Name = "btnInv";
+            this.btnInv.Size = new System.Drawing.Size(316, 54);
+            this.btnInv.TabIndex = 0;
+            this.btnInv.Text = "INVENTORY";
+            this.btnInv.UseVisualStyleBackColor = true;
+            this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
             // 
-            // button2
+            // btnCash
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(316, 54);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "CASHIER";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCash.Location = new System.Drawing.Point(12, 170);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(316, 54);
+            this.btnCash.TabIndex = 1;
+            this.btnCash.Text = "CASHIER";
+            this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // label1
             // 
@@ -71,8 +72,8 @@
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(341, 261);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCash);
+            this.Controls.Add(this.btnInv);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainSelection";
@@ -86,8 +87,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInv;
+        private System.Windows.Forms.Button btnCash;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -61,6 +61,14 @@ namespace MagnumOpusTheVisual
                     conn.Close();
                     this.Close();
                 }
+                else if (selection == "Cashier")
+                {
+                    Cashier C = new Cashier();
+                    C.Show();
+                    StateCheck.logicSwitch = true;
+                    conn.Close();
+                    this.Close();
+                }
             }
             else
             {

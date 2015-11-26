@@ -16,7 +16,12 @@ namespace MagnumOpusTheVisual
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MainSelection_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();                 //MAKE SURE APPLICATION CLOSES IF CLOSED BY USER
+        }
+
+        private void btnInv_Click(object sender, EventArgs e)
         {
             Login L = new Login();  //Login Object Initialize
             L.selection = "Inventory";  //LET LOGIN.CS KNOW THAT USER CLICKED INVENTORY
@@ -24,14 +29,23 @@ namespace MagnumOpusTheVisual
             if (StateCheck.logicSwitch == true)
             {
                 StateCheck.logicSwitch = false;
-                this.Hide();                
+                this.Hide();
             }
         }
 
-        private void MainSelection_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnCash_Click(object sender, EventArgs e)
         {
-            Application.Exit();                 //MAKE SURE APPLICATION CLOSES IF CLOSED BY USER
+            Login L = new Login();  //Login Object Initialize
+            L.selection = "Cashier";  //LET LOGIN.CS KNOW THAT USER CLICKED INVENTORY
+            L.ShowDialog();         //Show Login form
+            if (StateCheck.logicSwitch == true)
+            {
+                StateCheck.logicSwitch = false;
+                this.Hide();
+            }
         }
+
+        
 
 
 
