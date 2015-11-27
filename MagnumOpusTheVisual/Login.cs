@@ -29,7 +29,7 @@ namespace MagnumOpusTheVisual
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            conn = DB.sqlConnect("localhost", "iteminventory", "root", "root");            
+            conn = DB.sqlConnect("localhost", "iteminventory", "root");            
             try
             {
                 conn.Open();     //CONNECTS TO THE MYSQL DATABASE

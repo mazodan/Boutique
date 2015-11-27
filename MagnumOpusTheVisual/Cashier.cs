@@ -14,21 +14,22 @@ namespace MagnumOpusTheVisual
     public partial class Cashier : Form
     {
         decimal total = 0;
-        decimal change = 0;
+        public decimal change = 0;
         int currentRow;
         MySqlConnection conn = new MySqlConnection();
         DBClass DB = new DBClass();
+        
 
         public Cashier()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void Cashier_Load(object sender, EventArgs e)
         {
             lblTotal.Text = total.ToString();
             lblChange.Text = change.ToString();
-            conn = DB.sqlConnect("localhost", "iteminventory", "root", "root"); //EDIT CREDENTIALS HERE
+            conn = DB.sqlConnect("localhost", "iteminventory", "root"); //EDIT CREDENTIALS HERE
             try
             {
                 conn.Open();            //CONNECTS TO THE MYSQL DATABASE 
@@ -94,17 +95,61 @@ namespace MagnumOpusTheVisual
 
         private void btnComp_Click(object sender, EventArgs e)
         {
-            btnAdd.Enabled = false;
-            btnPrint.Enabled = true;
-            Cashout C = new Cashout();
-            C.Amount = total;
-            C.ShowDialog();
+            DialogResult dialogResult = MessageBox.Show("Are you sure? Action cannot be undone", "warning", MessageBoxButtons.YesNo,MessageBoxIcon.Asterisk);
+            if (dialogResult == DialogResult.Yes)
+            {
+                btnAdd.Enabled = false;
+                btnPrint.Enabled = true;
+                Cashout C = new Cashout();
+                C.Amount = total;
+                var child = C;
+                child.FormClosed += ChildFormClosed;
+                child.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
+            
         }
 
 
+        void ChildFormClosed(object sender, FormClosedEventArgs e)      //EXECUTES IF CHILD FORM CLOSES
+        {
+            lblChange.Text = StateCheck.Change.ToString();
+            btnComp.Enabled = false;
+            txtReceipt.Text = txtReceipt.Text + DB.ReceiptFooter(lblTotal.Text, lblChange.Text);
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            
+            e.Graphics.DrawString(txtReceipt.Text, this.Font, Brushes.Black,250,100,StringFormat.GenericDefault);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void btnNewC_Click(object sender, EventArgs e)
+        {
+            total = 0;
+            change = 0;
+            lblChange.Text = "0";
+            lblTotal.Text = "0";
+            btnAdd.Enabled = true;
+            btnComp.Enabled = true;
+            btnPrint.Enabled = false;
+            txtReceipt.Text = DB.ReceiptIntro();
+        }
+
         
+
+
         
-        
+
+
         
         
         /*

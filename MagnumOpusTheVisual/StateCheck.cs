@@ -19,5 +19,14 @@ namespace MagnumOpusTheVisual
 
         public static string searchItem { get; set; } 
         //AFTER USER UPDATES/INSERTS GETS THE SEARCH ITEM FROM DBMODIFIER, TO SEARCH IT.
+
+        public static decimal AmtPaid { get; set; }
+        //GET AMOUNT PAID
+
+        public static decimal VAT { get; set; }
+        //GETS THE VAT
+
+        public static decimal Change { get; set; }
+        //GETS THE CHANGE AFTER TRANSACTION IS COMPLETE
     }
 }

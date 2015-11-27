@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblAmt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPay = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -66,14 +66,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Enter Amount Paid";
             // 
-            // textBox1
+            // txtPay
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(51, 102);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPay.Location = new System.Drawing.Point(51, 102);
+            this.txtPay.Multiline = true;
+            this.txtPay.Name = "txtPay";
+            this.txtPay.Size = new System.Drawing.Size(210, 27);
+            this.txtPay.TabIndex = 3;
             // 
             // btnConfirm
             // 
@@ -83,6 +83,7 @@
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm Payment";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // Cashout
             // 
@@ -91,7 +92,7 @@
             this.ClientSize = new System.Drawing.Size(313, 181);
             this.ControlBox = false;
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPay);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblAmt);
             this.Controls.Add(this.label1);
@@ -109,7 +110,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAmt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPay;
         private System.Windows.Forms.Button btnConfirm;
     }
 }

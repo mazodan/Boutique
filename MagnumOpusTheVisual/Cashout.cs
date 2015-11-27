@@ -23,6 +23,28 @@ namespace MagnumOpusTheVisual
             lblAmt.Text = Amount.ToString();
         }
 
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (decimal.Parse(txtPay.Text) < Amount)
+                {
+                    MessageBox.Show("Insufficient payment", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    StateCheck.AmtPaid = (decimal.Parse(txtPay.Text));
+                    StateCheck.Change = (decimal.Parse(txtPay.Text) - Amount);
+                    StateCheck.VAT = (Amount * 0.12M);
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter an Integer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }

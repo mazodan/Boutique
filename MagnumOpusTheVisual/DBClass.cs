@@ -20,6 +20,15 @@ namespace MagnumOpusTheVisual
                 "server='" + server + "';Database="+ dbase +";User ID=" + user +";Password=" + pwrd);
             return conn;
         }
+
+        //FOR DATABASES WITH NO GODDAMNED ROOT
+        public MySqlConnection sqlConnect(string server, string dbase, string user)
+        {
+            MySqlConnection conn = new MySqlConnection(
+                "server='" + server + "';Database=" + dbase + ";User ID=" + user + ";");
+            return conn;
+        }
+
                //THIS CREATES AN ADAPTER TO FILL ALL ITEMS TO THE DATAGRIDVIEW
         public void reload(MySqlConnection conn, string query, string table, DataGridView dgv)
         {
@@ -180,7 +189,17 @@ namespace MagnumOpusTheVisual
 
         public string InsertItem(string ItemName, string ItemPrice, string Quantity)
         {
-            return ItemName + "\t\t x" + Quantity + "\t\t" + ItemPrice;
+            return ItemName + "\t\t x" + Quantity + "\n\t\t" + ItemPrice;
+        }
+
+        public string ReceiptFooter(string total, string change)
+        {
+            return "\n\nTOTAL AMOUNT: " + total + "\nAMOUNT PAID: "
+                + StateCheck.AmtPaid.ToString() + "\nVAT: " + StateCheck.VAT.ToString() +                
+                "\nCHANGE: " + StateCheck.Change.ToString() +
+                "\nTHANK YOU FOR TRANSACTING WITH US";
+
+            //APOLOGIES FOR THE SPAGHETTI CODE, LIMITATIONS OF SPACE
         }
        
     }
