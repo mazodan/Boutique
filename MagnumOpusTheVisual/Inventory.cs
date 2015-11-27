@@ -33,7 +33,7 @@ namespace MagnumOpusTheVisual
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            conn = DB.sqlConnect("localhost", "iteminventory", "root"); //EDIT CREDENTIALS HERE
+            conn = DB.sqlConnect("localhost", "iteminventory", "root", "root"); //EDIT CREDENTIALS HERE
             try
             {
                 conn.Open();            //CONNECTS TO THE MYSQL DATABASE (MYSQL IS OUTDATED, CAN WE USE SQL REFERENCES?)
