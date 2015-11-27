@@ -9,3 +9,8 @@ C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.csproj.Ge
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.exe
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.pdb
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.UpdateQtyPrice.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.CashHelp.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.Cashier.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.Cashout.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.Login.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Release\MagnumOpusTheVisual.startup.resources

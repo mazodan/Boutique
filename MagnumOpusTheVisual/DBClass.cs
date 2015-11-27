@@ -187,16 +187,16 @@ namespace MagnumOpusTheVisual
             return "Boutique Official Receipt(MOCK RECEIPT)\nSignature with Printed Name:\nDate Issued:"; 
         }
 
-        public string InsertItem(string ItemName, string ItemPrice, string Quantity)
+        public string InsertItem(string ItemName, string SoldPrice, string Quantity, string ItemPrice)
         {
-            return ItemName + "\t\t x" + Quantity + "\n\t\t" + ItemPrice;
+            return ItemName + "        x" + Quantity + "       ₱" + ItemPrice + "\n\t\t₱" + SoldPrice;
         }
 
         public string ReceiptFooter(string total, string change)
         {
-            return "\n\nTOTAL AMOUNT: " + total + "\nAMOUNT PAID: "
-                + StateCheck.AmtPaid.ToString() + "\nVAT: " + StateCheck.VAT.ToString() +                
-                "\nCHANGE: " + StateCheck.Change.ToString() +
+            return "\n\nTOTAL AMOUNT: ₱" + total + "\nAMOUNT PAID: ₱"
+                + StateCheck.AmtPaid.ToString() + "\nVAT: ₱" + StateCheck.VAT.ToString() +
+                "\nCHANGE: ₱" + StateCheck.Change.ToString() +
                 "\nTHANK YOU FOR TRANSACTING WITH US";
 
             //APOLOGIES FOR THE SPAGHETTI CODE, LIMITATIONS OF SPACE

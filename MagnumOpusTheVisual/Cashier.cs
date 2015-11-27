@@ -29,7 +29,7 @@ namespace MagnumOpusTheVisual
         {
             lblTotal.Text = total.ToString();
             lblChange.Text = change.ToString();
-            conn = DB.sqlConnect("localhost", "iteminventory", "root"); //EDIT CREDENTIALS HERE
+            conn = DB.sqlConnect("localhost", "iteminventory", "root", "root"); //EDIT CREDENTIALS HERE
             try
             {
                 conn.Open();            //CONNECTS TO THE MYSQL DATABASE 
@@ -82,7 +82,8 @@ namespace MagnumOpusTheVisual
             }
             string txt = txtReceipt.Text + "\n";
             decimal presyo = decimal.Parse(dgvSearch.Rows[currentRow].Cells[2].Value.ToString()) * decimal.Parse(txtQ.Text);
-            txtReceipt.Text = txt + "\n" + DB.InsertItem(dgvSearch.Rows[currentRow].Cells[1].Value.ToString(), presyo.ToString(), txtQ.Text);
+            txtReceipt.Text = txt + "\n" + DB.InsertItem(dgvSearch.Rows[currentRow].Cells[1].Value.ToString(), presyo.ToString(), txtQ.Text,
+                dgvSearch.Rows[currentRow].Cells[2].Value.ToString());
 
             
             
