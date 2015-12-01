@@ -41,3 +41,4 @@ D:\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.UpdateQtyPrice.r
 D:\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.csproj.GenerateResource.Cache
 D:\MagnumOpus\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.exe
 D:\MagnumOpus\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.pdb
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.AdminManage.resources

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManage.Designer.cs">
+      <DependentUpon>AdminManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CashHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +99,12 @@
     <Compile Include="MainSelection.Designer.cs">
       <DependentUpon>MainSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminManage.resx">
+      <DependentUpon>AdminManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CashHelp.resx">
       <DependentUpon>CashHelp.cs</DependentUpon>
     </EmbeddedResource>

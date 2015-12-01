@@ -77,5 +77,54 @@ namespace MagnumOpusTheVisual
 
             
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("An Admin account is required to access User Management Privileges", "warning", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            if (dialogResult == DialogResult.Yes && txtUser.Text != "" && txtPass.Text != "")
+            {
+                conn = DB.sqlConnect("localhost", "iteminventory", "root", "root");
+                try
+                {
+                    conn.Open();     //CONNECTS TO THE MYSQL DATABASE
+                }
+                catch (MySqlException ex)   //CATCH EXCEPTIONS,!!!!
+                {
+                    MessageBox.Show(ex.Message);
+                    return;                     //terminates method if exception caught
+                }
+
+                string query = "select * from admins where username = @user";
+                MySqlCommand comm = new MySqlCommand(query, conn);
+                comm.Parameters.Add(new MySqlParameter("@user", txtUser.Text));
+
+                MySqlDataAdapter adapt = new MySqlDataAdapter(comm);    //passing command to adapter
+                DataSet dset = new DataSet();
+                DataRow drow;
+                adapt.Fill(dset, "admins");
+
+                drow = dset.Tables["admins"].Rows[0];
+                string hash = drow.ItemArray.GetValue(1).ToString();
+                bool confirm = PasswordHash.PasswordHash.ValidatePassword(txtPass.Text, hash);
+
+                if (confirm == true)
+                {
+                    MessageBox.Show("Admin Login Success", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Close();
+                    AdminManage AM = new AdminManage();
+                    AM.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Login Failiure");
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Insert Login Credentials");
+            }
+        }
+
     }
 }
