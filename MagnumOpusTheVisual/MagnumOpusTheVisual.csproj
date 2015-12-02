@@ -99,6 +99,12 @@
     <Compile Include="MainSelection.Designer.cs">
       <DependentUpon>MainSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="PassModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassModify.Designer.cs">
+      <DependentUpon>PassModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="MainSelection.resx">
       <DependentUpon>MainSelection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PassModify.resx">
+      <DependentUpon>PassModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -136,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateQtyPrice.resx">
       <DependentUpon>UpdateQtyPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserModify.resx">
+      <DependentUpon>UserModify.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -163,6 +175,12 @@
       <DependentUpon>UpdateQtyPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="StateCheck.cs" />
+    <Compile Include="UserModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserModify.Designer.cs">
+      <DependentUpon>UserModify.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

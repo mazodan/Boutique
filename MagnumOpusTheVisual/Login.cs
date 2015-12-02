@@ -103,22 +103,31 @@ namespace MagnumOpusTheVisual
                 DataRow drow;
                 adapt.Fill(dset, "admins");
 
-                drow = dset.Tables["admins"].Rows[0];
-                string hash = drow.ItemArray.GetValue(1).ToString();
-                bool confirm = PasswordHash.PasswordHash.ValidatePassword(txtPass.Text, hash);
+                int count = dset.Tables["admins"].Rows.Count;
 
-                if (confirm == true)
+                if (count == 1)
                 {
-                    MessageBox.Show("Admin Login Success", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    conn.Close();
-                    AdminManage AM = new AdminManage();
-                    AM.ShowDialog();
+                    drow = dset.Tables["admins"].Rows[0];
+                    string hash = drow.ItemArray.GetValue(1).ToString();
+                    bool confirm = PasswordHash.PasswordHash.ValidatePassword(txtPass.Text, hash);
+                    if (confirm == true)
+                    {
+                        MessageBox.Show("Admin Login Success", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conn.Close();
+                        AdminManage AM = new AdminManage();
+                        AM.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login Failiure");
+                        conn.Close();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Login Failiure");
                     conn.Close();
-                }
+                }     
             }
             else
             {
