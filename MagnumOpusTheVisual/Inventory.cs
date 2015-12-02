@@ -114,10 +114,18 @@ namespace MagnumOpusTheVisual
             D.Command = "TO UPDATE, EDIT THE VALUES\nCLICK UPDATE BUTTON, \nNO EMPTY FIELDS!!!";
             D.Caption = "Update";    //SETS THE CAPTION TO UPDATE   
             D.Conn = conn;
-            D.ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();         //PASS SELECTED FORMS TO UPDATE FORM
-            D.itemname = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
-            D.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
-            D.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
+            try
+            {
+                D.ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();         //PASS SELECTED FORMS TO UPDATE FORM
+                D.itemname = dgvInventory.Rows[currentRow].Cells[1].Value.ToString();
+                D.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
+                D.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select a Row");
+                return;
+            }
             var child = D;
             child.FormClosed += ChildFormClosed;
             child.ShowDialog();
@@ -130,9 +138,17 @@ namespace MagnumOpusTheVisual
             Q.Instruction = "Update the Quantity";  //SEND INSTRUCTIONS
             Q.ButtonCaption = "Update Quantity";    //SEND THE CAPTION FOR COMPARISON
             Q.Conn = conn;
-            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
-            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
-            Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
+            try
+            {
+                Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
+                Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
+                Q.QTY = dgvInventory.Rows[currentRow].Cells[2].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select a Row");
+                return;
+            }
             var child = Q;
             child.FormClosed += ChildFormClosed;
             child.ShowDialog();
@@ -144,9 +160,17 @@ namespace MagnumOpusTheVisual
             Q.Instruction = "Update the Price";
             Q.ButtonCaption = "Update Price";
             Q.Conn = conn;
-            Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
-            Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
-            Q.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
+            try
+            {
+                Q.ItemID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();     //GET REFERENCE
+                Q.NameOfItem = dgvInventory.Rows[currentRow].Cells[1].Value.ToString(); //TO IDENTIFY THE FORM UPDATED
+                Q.Price = dgvInventory.Rows[currentRow].Cells[3].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select a Row");
+                return;
+            }
             var child = Q;
             child.FormClosed += ChildFormClosed;
             child.ShowDialog();
@@ -157,7 +181,17 @@ namespace MagnumOpusTheVisual
         private void btnDelete_Click(object sender, EventArgs e)
         {
             conn.Open();        //GETS THE ID
-            string ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
+            string ID = string.Empty;
+            try
+            {
+                ID = dgvInventory.Rows[currentRow].Cells[0].Value.ToString();
+            }
+            catch (Exception)
+            {
+                conn.Close();
+                MessageBox.Show("Select a Row");
+                return;
+            }
             if (MessageBox.Show("This will delete the Item, Click OK to Proceed", "Delete Item",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

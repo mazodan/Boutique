@@ -152,6 +152,7 @@
             this.Name = "UserModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Credentials";
+            this.Load += new System.EventHandler(this.UserModify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

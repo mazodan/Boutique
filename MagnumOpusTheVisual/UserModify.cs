@@ -26,5 +26,15 @@ namespace MagnumOpusTheVisual
         {
             InitializeComponent();
         }
+
+        private void UserModify_Load(object sender, EventArgs e)
+        {
+            if (Capt == "Add User")
+            {
+
+            }
+        }
+
+
     }
 }
