@@ -42,3 +42,5 @@ D:\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.csproj.GenerateR
 D:\MagnumOpus\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.exe
 D:\MagnumOpus\MagnumOpusTheVisual\bin\Debug\MagnumOpusTheVisual.pdb
 C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.AdminManage.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.PassModify.resources
+C:\Work\MagnumOpus\MagnumOpusTheVisual\obj\Debug\MagnumOpusTheVisual.UserModify.resources

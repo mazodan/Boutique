@@ -45,6 +45,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add User";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -90,6 +91,7 @@
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search Username";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // AdminManage
             // 

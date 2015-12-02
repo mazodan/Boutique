@@ -47,5 +47,19 @@ namespace MagnumOpusTheVisual
             conn.Close();
             dgvUserInfo.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            DB.search(conn, txtSearch.Text, "security", dgvUserInfo); //SEARCHES THE DATABASE, RETURNS TO DATAGRIDVIEW
+            conn.Close();  //NAME OF TABLE, TEXT TO BE SEARCHED, CONNECTION STRING AND DATAGRIDVIEW TO DISPLAY RESULT
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserModify UM = new UserModify();
+            UM.conn = conn;
+
+        }
     }
 }
